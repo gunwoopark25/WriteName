@@ -131,6 +131,7 @@
     <ClCompile Include="WriteName.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Point2D.h" />
     <ClInclude Include="WriteName.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
