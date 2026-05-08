@@ -1,6 +1,7 @@
 #include "WriteName.h"
 
-void main()
+int main()
 {
-	
+
+	return 0;
 }

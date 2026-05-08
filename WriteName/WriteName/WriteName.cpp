@@ -7,4 +7,20 @@
 
 using namespace std;
 
+WriteName::WriteName()
+{
+    Parameter = 100;
+    Degree = 3;
+}
 
+void WriteName::fileLoad()
+{
+    ifstream readfile("u.txt");
+    if (!readfile)
+    {
+        cout << "This File can't open" << endl;
+        return;
+    }
+
+
+}
