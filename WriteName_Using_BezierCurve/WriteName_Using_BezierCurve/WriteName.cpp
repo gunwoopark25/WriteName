@@ -9,7 +9,7 @@ using namespace std;
 
 WriteName::WriteName()
 {
-    Parameter = 1000;
+    Parameter = 10;
     Degree = 3;
     POC_Size = Degree + 1;
     for (int k = Degree; k > 0; k--)
@@ -20,17 +20,9 @@ WriteName::WriteName()
     CP = new Point2D[Degree + 1];
 }
 
-WriteName::~WriteName()
-{
-    readFile.close();
-    psFile.close();
-}
-
-void WriteName::fileOpen()
+void WriteName::fileLoad()
 {
     readFile.open("u.txt");
-    psFile.open("name.ps");
-    psFile << "%!PS" << endl;
 }
 
 void WriteName::inputData()
@@ -89,12 +81,6 @@ void WriteName::De_Casteljau()
         double t = (double)k / Parameter;
         int boundary = 0;
 
-        for (int l = 0; l <= Degree; l++)
-        {
-            Coordinate[l].x = CP[l].x;
-            Coordinate[l].y = CP[l].y;
-        }
-
         for (int j = 1; j <= Degree; j++)
         {
             int n = Degree - j + 1;
@@ -103,61 +89,8 @@ void WriteName::De_Casteljau()
 
             for (int X = start_X; X < end_X; X++)
             {
-                Coordinate[X + n].x = (1 - t) * Coordinate[X - 1].x + t * Coordinate[X].x;
-                Coordinate[X + n].y = (1 - t) * Coordinate[X - 1].y + t * Coordinate[X].y;
+                
             }
-
-            boundary += (Degree + 1 - j + 1);
-        }
-
-        int last_X = POC_Size - 1;
-        All_POC[k].x = Coordinate[last_X].x;
-        All_POC[k].y = Coordinate[last_X].y;
-    }
-
-    /*--- 확인차 출력 ---*/
-    cout << "All POC Coordinate" << endl;
-    for (int k = 0; k <= Parameter; k++)
-    {
-        cout << All_POC[k].x << " " << All_POC[k].y << endl;
-    }
-}
-
-void WriteName::solveNormalization()
-{
-    for (int k = 0; k <= Degree; k++)
-    {
-        CP[k].x = CP[k].x * dx + Min_x;
-        CP[k].y = CP[k].y * dy + Min_y;
-    }
-
-    for (int k = 0; k <= Parameter; k++)
-    {
-        All_POC[k].x = All_POC[k].x * dx + Min_x;
-        All_POC[k].y = All_POC[k].y * dx + Min_y;
-    }
-}
-
-void WriteName::writePS()
-{
-    
-    psFile << "newpath" << endl;
-    for (int k = 0; k <= Parameter; k++)
-    {
-        if (k == 0)
-        {
-            psFile << All_POC[k].x << " " << All_POC[k].y << " " << "moveto" << endl;
-        }
-        else
-        {
-            psFile << All_POC[k].x << " " << All_POC[k].y << " " << "lineto" << endl;
         }
     }
-    psFile << "stroke" << endl;
 }
-
-void WriteName::finalPS()
-{
-    psFile << "showpage" << endl;
-}
-

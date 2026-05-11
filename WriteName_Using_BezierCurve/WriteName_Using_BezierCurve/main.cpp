@@ -7,14 +7,10 @@ void main()
 {
 	WriteName Bezier;
 
-	Bezier.fileOpen();
+	Bezier.fileLoad();
 	for (int i = 0; i < 21; i++)
 	{
 		Bezier.inputData();
 		Bezier.normalization();
-		Bezier.De_Casteljau();
-		Bezier.solveNormalization();
-		Bezier.writePS();
 	}
-	Bezier.finalPS();
 }
