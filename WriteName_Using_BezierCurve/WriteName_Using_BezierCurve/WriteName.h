@@ -9,13 +9,14 @@ class WriteName
 {
 private:
 	ifstream readFile;
+	ofstream psFile;
 
 public:
 	/*--- 생성자 ---*/
 	WriteName();
 
 	/*--- 소멸자 ---*/
-
+	~WriteName();
 
 	/*--- 1차원 변수 ---*/
 	int Parameter;
@@ -34,8 +35,11 @@ public:
 	Point2D* All_POC;
 
 	/*--- 함수 ---*/
-	void fileLoad();
+	void fileOpen();
 	void inputData();
 	void normalization();
 	void De_Casteljau();
+	void solveNormalization();
+	void writePS();
+	void finalPS();
 };
