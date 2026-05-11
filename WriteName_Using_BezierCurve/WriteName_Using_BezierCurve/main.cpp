@@ -8,7 +8,7 @@ void main()
 	WriteName Bezier;
 
 	Bezier.fileOpen();
-	for (int i = 0; i < 21; i++)
+	for (int i = 0; i < 71; i++)
 	{
 		Bezier.inputData();
 		Bezier.normalization();

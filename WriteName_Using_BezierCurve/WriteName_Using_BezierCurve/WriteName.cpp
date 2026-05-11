@@ -114,13 +114,6 @@ void WriteName::De_Casteljau()
         All_POC[k].x = Coordinate[last_X].x;
         All_POC[k].y = Coordinate[last_X].y;
     }
-
-    /*--- 확인차 출력 ---*/
-    cout << "All POC Coordinate" << endl;
-    for (int k = 0; k <= Parameter; k++)
-    {
-        cout << All_POC[k].x << " " << All_POC[k].y << endl;
-    }
 }
 
 void WriteName::solveNormalization()
@@ -134,7 +127,7 @@ void WriteName::solveNormalization()
     for (int k = 0; k <= Parameter; k++)
     {
         All_POC[k].x = All_POC[k].x * dx + Min_x;
-        All_POC[k].y = All_POC[k].y * dx + Min_y;
+        All_POC[k].y = All_POC[k].y * dy + Min_y;
     }
 }
 
@@ -160,4 +153,3 @@ void WriteName::finalPS()
 {
     psFile << "showpage" << endl;
 }
-
