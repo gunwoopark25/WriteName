@@ -91,6 +91,55 @@ void WriteName::De_Casteljau()
             {
                 
             }
+<<<<<<< HEAD
         }
     }
+=======
+
+            boundary += (Degree + 1 - j + 1);
+        }
+
+        int last_X = POC_Size - 1;
+        All_POC[k].x = Coordinate[last_X].x;
+        All_POC[k].y = Coordinate[last_X].y;
+    }
+}
+
+void WriteName::solveNormalization()
+{
+    for (int k = 0; k <= Degree; k++)
+    {
+        CP[k].x = CP[k].x * dx + Min_x;
+        CP[k].y = CP[k].y * dy + Min_y;
+    }
+
+    for (int k = 0; k <= Parameter; k++)
+    {
+        All_POC[k].x = All_POC[k].x * dx + Min_x;
+        All_POC[k].y = All_POC[k].y * dy + Min_y;
+    }
+}
+
+void WriteName::writePS()
+{
+    
+    psFile << "newpath" << endl;
+    for (int k = 0; k <= Parameter; k++)
+    {
+        if (k == 0)
+        {
+            psFile << All_POC[k].x << " " << All_POC[k].y << " " << "moveto" << endl;
+        }
+        else
+        {
+            psFile << All_POC[k].x << " " << All_POC[k].y << " " << "lineto" << endl;
+        }
+    }
+    psFile << "stroke" << endl;
+}
+
+void WriteName::finalPS()
+{
+    psFile << "showpage" << endl;
+>>>>>>> 9f4ad39b589c6538d565dfa6f78f784af1110863
 }
