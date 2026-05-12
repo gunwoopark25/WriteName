@@ -20,6 +20,11 @@ WriteName::WriteName()
     CP = new Point2D[Degree + 1];
 }
 
+void WriteName::~WriteName()
+{
+
+}
+
 void WriteName::fileLoad()
 {
     readFile.open("u.txt");

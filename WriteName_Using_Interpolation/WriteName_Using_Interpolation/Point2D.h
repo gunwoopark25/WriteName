@@ -6,3 +6,10 @@
 #define WRITENAME_USING_INTERPOLATION_POINT2D_H
 
 #endif //WRITENAME_USING_INTERPOLATION_POINT2D_H
+
+#pragma once
+struct Point2D
+{
+    double x;
+    double y;
+};

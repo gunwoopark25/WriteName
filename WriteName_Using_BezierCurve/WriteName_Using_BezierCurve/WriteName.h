@@ -16,7 +16,7 @@ public:
 	WriteName();
 
 	/*--- 소멸자 ---*/
-
+	~WriteName();
 
 	/*--- 1차원 변수 ---*/
 	int Parameter;
