@@ -10,8 +10,14 @@ class WriteName
 private:
     ifstream readFile;
     ofstream psFile;
-    
+
 public:
+    WriteName();
+    ~WriteName();
 
+    int Parameter;
+    int Degree;
+    int POC_Size;
+
+    Point2D *POC;
 };
-
