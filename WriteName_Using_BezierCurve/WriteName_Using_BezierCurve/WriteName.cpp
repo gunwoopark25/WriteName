@@ -23,6 +23,8 @@ WriteName::WriteName()
 void WriteName::fileLoad()
 {
     readFile.open("u.txt");
+    psFile.open("name.ps");
+    psFile << "%!PS" << endl;
 }
 
 void WriteName::inputData()
@@ -91,12 +93,6 @@ void WriteName::De_Casteljau()
             {
                 
             }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        }
-    }
-=======
-
             boundary += (Degree + 1 - j + 1);
         }
 
@@ -123,7 +119,6 @@ void WriteName::solveNormalization()
 
 void WriteName::writePS()
 {
-    
     psFile << "newpath" << endl;
     for (int k = 0; k <= Parameter; k++)
     {
@@ -142,9 +137,4 @@ void WriteName::writePS()
 void WriteName::finalPS()
 {
     psFile << "showpage" << endl;
->>>>>>> 9f4ad39b589c6538d565dfa6f78f784af1110863
-=======
-        }
-    }
->>>>>>> parent of e539a46 (1차 완료(이제 여기서 수정해야함))
 }

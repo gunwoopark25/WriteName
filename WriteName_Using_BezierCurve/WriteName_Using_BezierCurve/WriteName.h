@@ -9,6 +9,7 @@ class WriteName
 {
 private:
 	ifstream readFile;
+	ofstream psFile;
 
 public:
 	/*--- 생성자 ---*/
@@ -38,4 +39,8 @@ public:
 	void inputData();
 	void normalization();
 	void De_Casteljau();
+	void solveNormalization();
+	void writePS();
+	void finalPS();
+
 };
