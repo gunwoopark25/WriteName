@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="WriteName_Using_BezierCurve/WriteName_Using_BezierCurve.vcxproj" Id="5a262ba8-8e6e-49c3-a1fa-8d917c060ab9" />
+</Solution>
