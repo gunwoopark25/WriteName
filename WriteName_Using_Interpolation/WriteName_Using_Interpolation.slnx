@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="WriteName_Using_Interpolation/WriteName_Using_Interpolation.vcxproj" />
+  <Project Path="WriteName_Using_Interpolation/WriteName_Using_Interpolation.vcxproj" Id="c7e71c7e-5115-4d48-a6d3-23c4970ce5a3" />
 </Solution>
