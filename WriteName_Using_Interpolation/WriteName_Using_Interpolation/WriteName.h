@@ -20,4 +20,7 @@ public:
     int POC_Size;
 
     Point2D *POC;
+
+    void openFile();
+
 };

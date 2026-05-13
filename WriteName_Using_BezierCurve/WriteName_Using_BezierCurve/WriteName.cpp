@@ -20,9 +20,10 @@ WriteName::WriteName()
     CP = new Point2D[Degree + 1];
 }
 
-void WriteName::~WriteName()
+WriteName::~WriteName()
 {
-
+    readFile.close();
+    psFile.close();
 }
 
 void WriteName::fileLoad()

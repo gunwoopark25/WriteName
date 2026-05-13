@@ -19,3 +19,18 @@ WriteName::WriteName()
     
     POC = new Point2D[Degree+1];
 }
+
+WriteName::~WriteName()
+{
+    readFile.close();
+    psFile.close();
+}
+
+void WriteName::openFile()
+{
+    readFile.open("u.txt");
+    psFile.open("Name.ps");
+
+    psFile << "%!PS" << endl;
+}
+
