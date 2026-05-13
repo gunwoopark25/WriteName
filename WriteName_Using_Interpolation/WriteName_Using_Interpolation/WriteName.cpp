@@ -154,9 +154,9 @@ void WriteName::GaussJordanElimination()
 {
 	for (int m = 0; m <= Degree; m++)
 	{
-		for (int n = Degree + 1; n <= Degree * 2 + 2; n++)
+		for (int n = Degree + 1; n < Degree * 2 + 2; n++)
 		{
-			if (m == n - Degree + 1)
+			if (m == n - Degree - 1)
 			{
 				Matrix[m][n] = 1;
 			}
@@ -217,6 +217,13 @@ void WriteName::De_Casteljau()
 {
 	Point2D* Coordinate = new Point2D[POC_Size];
 	All_POC = new Point2D[Parameter + 1];
+
+	/*--- CP를 Coordinate 초기값으로 복사 ---*/
+	for (int j = 0; j <= Degree; j++)
+	{
+		Coordinate[j].x = CP[j].x;
+		Coordinate[j].y = CP[j].y;
+	}
 
 	for (int k = 0; k <= Parameter; k++)
 	{
